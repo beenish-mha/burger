@@ -1,3 +1,3 @@
-orm = require(".config/orm.js");
+orm = require("../config/orm.js");
 
 orm.selectAll("*", "burgers");
