@@ -1,3 +1,11 @@
-orm = require("../config/orm.js");
+const orm = require("../config/orm.js");
 
-orm.selectAll("*", "burgers");
+const burger = {
+  selectAll: cb => {
+    orm.selectAll("*", "burgers", res => {
+      cb(res);
+    });
+  }
+};
+
+module.exports = burger;
