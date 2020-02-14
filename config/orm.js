@@ -2,13 +2,14 @@ const connection = require("./connection.js");
 
 //     selectAll()
 const orm = {
-  selectAll: (columns, table) => {
-    const queryString = "SELECT ?? FROM ??";
-    connection.query(queryString, [columns, table], (err, data) => {
+  selectAll: (table, cb) => {
+    const queryString = "SELECT * FROM " + table + ";";
+    connection.query(queryString, (err, data) => {
       if (err) {
         throw new Error(err);
       }
       console.log(data);
+      cb(data);
     });
   }
 };
