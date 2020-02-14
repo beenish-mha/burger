@@ -3,3 +3,10 @@
     <h1>{{this.burger_name}}</h1>
     {{/each}}
 </div>
+<div>
+    <form action="/burger/create" method="POST">
+        <input type="text" name="burger_name">
+        <button type="submit" class="btn" id="text-enter-button">Submit</button>
+    </form>
+    <p>Enter a burger you want to eat Click the "Submit" button.</p>
+</div>

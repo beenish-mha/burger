@@ -5,6 +5,10 @@ const burger = {
     orm.selectAll("burgers", res => {
       cb(res);
     });
+  },
+
+  create: (name, cb) => {
+    orm.create("burgers", "burger_name", "devoured", name, 0, cb);
   }
 };
 
